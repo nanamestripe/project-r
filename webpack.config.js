@@ -25,14 +25,19 @@ module.exports = {
       },
       {
         test: /\.(png|jpg)/,
+        //file-loaderの代わりにAsset Modulesを使う場合
+        type: "asset/resource",
+        generator: {
+          filename: "images/[name][ext]",
+        },
         use: [
-          {
-            loader: "file-loader",
-            options: {
-              esModule: false,
-              name: "images/[name].[ext]",
-            },
-          },
+          // {
+          //   loader: "file-loader",
+          //   options: {
+          //     esModule: false,
+          //     name: "images/[name].[ext]",
+          //   },
+          // },
         ],
       },
     ],
